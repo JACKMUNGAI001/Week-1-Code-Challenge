@@ -1,4 +1,5 @@
-Week-1-Code-Challenge
+#Week 1 Code-Challenge
+
 This project contains three simple JavaScript calculators:
 
 -Boda Fare Calculator: Estimates the total fare for a boda boda ride based on distance traveled.
