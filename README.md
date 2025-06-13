@@ -41,3 +41,7 @@ Mobile Money Fee Estimator:
 Each script will prompt you for input in the terminal and display the results.
 
 Author: Jackson
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

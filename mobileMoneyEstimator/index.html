@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Money Estimator</title>
+    <title>Utility Calculators</title>
 </head>
 <body>
-    <script src="../chaiCalculator/chai.js" ></script>
-    <script src="../mobileMoneyEstimator/fee.js"type="module" ></script>
-    <script src="../bodaFareCalculator/fare.js"type="module"></script>
+    <h1>Choose a Calculator</h1>
+    <button onclick="loadCalculator('chai')">Chai Calculator</button>
+    <button onclick="loadCalculator('fee')">Mobile Money Fee Estimator</button>
+    <button onclick="loadCalculator('fare')">Boda Fare Calculator</button>
+
+    <div id="calculator-container"></div>
+
+    <script>
+        function loadCalculator(type) {
+            // Clear previous calculator
+            document.getElementById('calculator-container').innerHTML = '';
+
+            if (type === 'chai') {
+                const script = document.createElement('script');
+                script.src = '../chaiCalculator/chai.js';
+                document.body.appendChild(script);
+            } else if (type === 'fee') {
+                import('../mobileMoneyEstimator/fee.js')
+                    .then(module => {
+                        if (module && typeof module.init === 'function') {
+                            module.init(document.getElementById('calculator-container'));
+                        }
+                    });
+            } else if (type === 'fare') {
+                import('../bodaFareCalculator/fare.js')
+                    .then(module => {
+                        if (module && typeof module.init === 'function') {
+                            module.init(document.getElementById('calculator-container'));
+                        }
+                    });
+            }
+        }
+    </script>
 </body>
 </html>
