@@ -1,4 +1,4 @@
-#Week 1 Code-Challenge
+# Week 1 Code-Challenge
 
 This project contains three simple JavaScript calculators:
 
